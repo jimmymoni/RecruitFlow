@@ -1,0 +1,8 @@
+# Dependencies
+node_modules/
+.env
+build/
+dist/
+
+# Claude Code settings (contains sensitive tokens)
+.claude/settings.local.json
