@@ -18,7 +18,8 @@ import {
   MessageSquare,
   Zap,
   MoreHorizontal,
-  ChevronDown
+  ChevronDown,
+  Brain
 } from 'lucide-react'
 import CandidatesList from './components/CandidatesList'
 import CandidateForm from './components/CandidateForm'
@@ -29,12 +30,14 @@ import ClientForm from './components/ClientForm'
 import TeamsChat from './components/TeamsChat'
 import AnalyticsDashboard from './components/AnalyticsDashboard'
 import SmartIntegrations from './components/SmartIntegrations'
+import AIDashboard from './components/AIDashboard'
+import WorkflowAutomation from './components/WorkflowAutomation'
 import FileUpload from './components/FileUpload'
 import DocumentViewer from './components/DocumentViewer'
 import { Candidate, CandidateFormData } from './types/candidate'
 import { Job, JobFormData } from './types/job'
 import { Client, ClientFormData } from './types/client'
-import { Document, DocumentUpload, UploadProgress } from './types/document'
+import { Document, DocumentUpload } from './types/document'
 import { mockCandidates } from './data/mockCandidates'
 import { mockJobs } from './data/mockJobs'
 import { mockClients, mockClientInteractions } from './data/mockClients'
@@ -251,12 +254,12 @@ function App() {
   // Secondary navigation - tools and utilities
   const secondaryNavigation = [
     { id: 'documents', label: 'Documents', icon: FileText },
-    { id: 'integrations', label: 'Integrations', icon: Zap },
+    { id: 'workflows', label: 'Workflows', icon: Zap },
+    { id: 'integrations', label: 'Integrations', icon: Settings },
+    { id: 'ai', label: 'AI Features', icon: Brain },
     { id: 'reports', label: 'Reports', icon: BarChart3 },
   ]
 
-  // All navigation items for compatibility
-  const navigationItems = [...primaryNavigation, ...secondaryNavigation]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -660,6 +663,10 @@ function App() {
         return renderDocuments()
       case 'integrations':
         return <SmartIntegrations />
+      case 'ai':
+        return <AIDashboard />
+      case 'workflows':
+        return <WorkflowAutomation />
       case 'reports':
         return <AnalyticsDashboard />
       case 'dashboard':

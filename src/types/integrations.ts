@@ -258,6 +258,7 @@ export interface IntegrationActivity {
   type: 'sync' | 'import' | 'export' | 'error' | 'connect' | 'disconnect'
   status: 'success' | 'error' | 'warning'
   message: string
+  errorMessage?: string
   details?: any
   recordsProcessed?: number
   timestamp: Date

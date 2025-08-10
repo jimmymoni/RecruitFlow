@@ -100,9 +100,9 @@ const DocumentViewer = ({
       onDownload(document)
     } else {
       // Fallback: trigger browser download
-      const link = document.createElement('a')
-      link.href = document.url
-      link.download = document.originalName
+      const link = window.document.createElement('a')
+      link.href = document!.url
+      link.download = document!.originalName
       link.click()
     }
   }, [document, onDownload])

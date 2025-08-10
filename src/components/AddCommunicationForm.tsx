@@ -8,21 +8,19 @@ import {
   MessageSquare,
   Save,
   X,
-  Clock,
   ArrowLeft,
   ArrowRight
 } from 'lucide-react'
 import { Communication, CommunicationFormData, CommunicationTypeLabels } from '../types/communication'
 
 interface AddCommunicationFormProps {
-  candidateId: string
   candidateName: string
   onSave: (data: CommunicationFormData) => void
   onCancel: () => void
   isOpen: boolean
 }
 
-const AddCommunicationForm = ({ candidateId, candidateName, onSave, onCancel, isOpen }: AddCommunicationFormProps) => {
+const AddCommunicationForm = ({ candidateName, onSave, onCancel, isOpen }: AddCommunicationFormProps) => {
   const [formData, setFormData] = useState<CommunicationFormData>({
     type: 'email',
     content: '',

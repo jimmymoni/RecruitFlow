@@ -666,7 +666,6 @@ const CandidatesList = () => {
 
       {/* Add Communication Form */}
       <AddCommunicationForm
-        candidateId={selectedCandidateForComm?.id || ''}
         candidateName={selectedCandidateForComm ? `${selectedCandidateForComm.firstName} ${selectedCandidateForComm.lastName}` : ''}
         onSave={handleSaveCommunication}
         onCancel={() => {
