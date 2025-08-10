@@ -1,0 +1,326 @@
+2025-08-10 12:50:42:5042 [31merror[39m: [31muncaughtException: Missing Supabase environment variables. Please check SUPABASE_URL and SUPABASE_ANON_KEY[39m
+[31mError: Missing Supabase environment variables. Please check SUPABASE_URL and SUPABASE_ANON_KEY[39m
+[31m    at Object.<anonymous> (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\config\supabase.ts:9:9)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+2025-08-10 12:51:01:511 [31merror[39m: [31muncaughtException: Missing Supabase environment variables. Please check SUPABASE_URL and SUPABASE_ANON_KEY[39m
+[31mError: Missing Supabase environment variables. Please check SUPABASE_URL and SUPABASE_ANON_KEY[39m
+[31m    at Object.<anonymous> (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\config\supabase.ts:9:9)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+[31m    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)[39m
+[31m    at Module.require (node:internal/modules/cjs/loader:1487:12)[39m
+2025-08-10 12:52:38:5238 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/auth.ts(56,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(105,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(126,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(129,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(187,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(197,26): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(228,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(272,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(283,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(323,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(340,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(372,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(392,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(432,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(446,11): error TS2304: Cannot find name 'userRepository'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/auth.ts(56,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(105,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(126,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(129,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(187,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(197,26): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(228,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(272,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(283,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(323,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(340,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(372,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(392,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(432,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(446,11): error TS2304: Cannot find name 'userRepository'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-10 12:53:52:5352 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/auth.ts(56,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(105,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(126,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(129,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(187,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(197,26): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(228,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(272,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(283,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(323,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(340,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(372,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(392,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(432,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(446,11): error TS2304: Cannot find name 'userRepository'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/auth.ts(56,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(105,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(126,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(129,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(187,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(197,26): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(228,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(272,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(283,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(323,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(340,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(372,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(392,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(432,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(446,11): error TS2304: Cannot find name 'userRepository'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-10 12:53:58:5358 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/auth.ts(56,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(105,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(126,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(129,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(187,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(197,26): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(228,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(272,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(283,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(323,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(340,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(372,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(392,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(432,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(446,11): error TS2304: Cannot find name 'userRepository'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/auth.ts(56,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(105,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(126,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(129,23): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(187,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(197,26): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: null, options?: (SignOptions & { algorithm: "none"; }) | undefined): string', gave the following error.[39m
+[31m    Argument of type 'string' is not assignable to parameter of type 'null'.[39m
+[31m  Overload 2 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, options?: SignOptions | undefined): string', gave the following error.[39m
+[31m    Type 'string' is not assignable to type 'number | StringValue | undefined'.[39m
+[31m  Overload 3 of 5, '(payload: string | object | Buffer<ArrayBufferLike>, secretOrPrivateKey: Buffer<ArrayBufferLike> | Secret | PrivateKeyInput | JsonWebKeyInput, callback: SignCallback): void', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'expiresIn' does not exist in type 'SignCallback'.[39m
+[31msrc/routes/auth.ts(228,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(272,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(283,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(323,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(340,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(372,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(392,11): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(432,24): error TS2304: Cannot find name 'userRepository'.[39m
+[31msrc/routes/auth.ts(446,11): error TS2304: Cannot find name 'userRepository'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-10 20:46:29:4629 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use :::5000[39m
+[31mError: listen EADDRINUSE: address already in use :::5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
+[31m    at listenInCluster (node:net:1997:12)[39m
+[31m    at Server.listen (node:net:2102:7)[39m
+[31m    at startServer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:140:12)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+2025-08-10 20:46:41:4641 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use :::5000[39m
+[31mError: listen EADDRINUSE: address already in use :::5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
+[31m    at listenInCluster (node:net:1997:12)[39m
+[31m    at Server.listen (node:net:2102:7)[39m
+[31m    at startServer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:140:12)[39m
+[31m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+2025-08-10 20:47:23:4723 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use :::5000[39m
+[31mError: listen EADDRINUSE: address already in use :::5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
+[31m    at listenInCluster (node:net:1997:12)[39m
+[31m    at Server.listen (node:net:2102:7)[39m
+[31m    at startServer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:141:12)[39m
+[31m    at Object.<anonymous> (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:180:1)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+2025-08-10 20:47:29:4729 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use :::5000[39m
+[31mError: listen EADDRINUSE: address already in use :::5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
+[31m    at listenInCluster (node:net:1997:12)[39m
+[31m    at Server.listen (node:net:2102:7)[39m
+[31m    at startServer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:141:12)[39m
+[31m    at Object.<anonymous> (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:180:1)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+2025-08-10 20:47:43:4743 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use :::5000[39m
+[31mError: listen EADDRINUSE: address already in use :::5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
+[31m    at listenInCluster (node:net:1997:12)[39m
+[31m    at Server.listen (node:net:2102:7)[39m
+[31m    at startServer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:141:12)[39m
+[31m    at Object.<anonymous> (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:180:1)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+2025-08-10 20:47:48:4748 [31merror[39m: [31muncaughtException: listen EADDRINUSE: address already in use :::5000[39m
+[31mError: listen EADDRINUSE: address already in use :::5000[39m
+[31m    at Server.setupListenHandle [as _listen2] (node:net:1940:16)[39m
+[31m    at listenInCluster (node:net:1997:12)[39m
+[31m    at Server.listen (node:net:2102:7)[39m
+[31m    at startServer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:141:12)[39m
+[31m    at Object.<anonymous> (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\src\server-simple.ts:180:1)[39m
+[31m    at Module._compile (node:internal/modules/cjs/loader:1730:14)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1618:23)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m

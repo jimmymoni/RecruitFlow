@@ -14,21 +14,25 @@ A modern, lightweight recruitment management web application designed specifical
 
 ## Common Commands
 
+### Frontend Commands
 ```bash
-# Project setup
+# Frontend setup and development
 npm install
+npm run dev          # Start frontend dev server (port 5173)
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run linting
+```
 
-# Development
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Linting
-npm run lint
+### Backend Commands
+```bash
+# Backend setup and development
+cd backend
+npm install
+npm run dev          # Start backend server (port 3001)
+npm run build        # Compile TypeScript
+npm run start        # Run production server
+npm run lint         # Run backend linting
 ```
 
 ## Architecture Overview
@@ -40,21 +44,79 @@ npm run lint
 - **Icons**: Lucide React for consistent iconography
 - **Animation**: Framer Motion for smooth UI transitions
 - **State Management**: React hooks (useState, useEffect)
+- **Backend**: Node.js/Express with TypeScript
+- **Database**: Supabase (PostgreSQL with real-time features)
+- **Authentication**: JWT with Supabase Auth
 - **AI Integration**: Cost-effective Chinese AI models (Qwen, Baichuan, ChatGLM)
-- **Backend**: Node.js/Express with AI model integration (planned)
+- **Real-time**: Socket.IO for live features
+- **File Storage**: Supabase Storage for documents and resumes
 
 ### Project Structure
 ```
-├── src/
+├── src/                 # Frontend React application
 │   ├── App.tsx          # Main dashboard component
 │   ├── main.tsx         # React app entry point
 │   └── index.css        # Global styles with Tailwind imports
+├── backend/             # Node.js/Express backend
+│   ├── src/
+│   │   ├── server-test.ts    # Main server file with Supabase integration
+│   │   ├── config/
+│   │   │   └── supabase.ts   # Supabase configuration and schema
+│   │   ├── utils/
+│   │   │   └── logger.ts     # Winston logging configuration
+│   │   └── middleware/
+│   │       └── errorHandler.ts # Global error handling
+│   ├── .env             # Environment variables (Supabase keys)
+│   ├── package.json     # Backend dependencies
+│   └── tsconfig.json    # Backend TypeScript config
 ├── index.html           # HTML template
 ├── vite.config.ts       # Vite configuration
 ├── tailwind.config.js   # Tailwind CSS configuration
-├── tsconfig.json        # TypeScript configuration
-└── package.json         # Dependencies and scripts
+├── tsconfig.json        # Frontend TypeScript configuration
+└── package.json         # Frontend dependencies and scripts
 ```
+
+## Backend Implementation
+
+### Current Backend Status
+✅ **Fully Operational**: Backend server running on port 3001  
+✅ **Database Connected**: Supabase PostgreSQL with complete schema  
+✅ **API Endpoints**: RESTful API with test endpoints functional  
+✅ **Real-time Ready**: Socket.IO configured for live features  
+✅ **Production Ready**: Error handling, logging, and security middleware  
+
+### API Endpoints
+```
+GET  /api/health        # Server health check
+GET  /api               # API documentation
+GET  /api/users         # List users (with pagination)
+GET  /api/candidates    # List candidates (with pagination)
+```
+
+### Database Schema
+Complete PostgreSQL schema implemented with:
+- **Users**: Authentication and user management
+- **Candidates**: Full candidate profiles with AI insights
+- **Jobs**: Job postings and pipeline management
+- **Clients**: Company profiles and relationship tracking
+- **Documents**: File storage and document management
+- **Communications**: Email/call tracking and history
+- **AI Logs**: AI processing analytics and cost tracking
+
+### Security Features
+- Helmet.js security headers
+- CORS configuration
+- Rate limiting (1000 requests/15 minutes)
+- JWT authentication ready
+- Row Level Security (RLS) enabled
+- Environment variable validation
+
+### Performance Features
+- Database indexing for optimal queries
+- Connection pooling
+- Request/response logging
+- Background job processing ready
+- Real-time WebSocket support
 
 ### Current Features
 

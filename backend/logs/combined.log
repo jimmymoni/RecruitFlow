@@ -1,0 +1,39 @@
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 12:52:38:5238"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 12:53:52:5352"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 12:53:57:5357"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📖 Please set up Supabase - see SUPABASE_SETUP.md\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m⚠️  Supabase configuration not set up yet\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m⚠️  Supabase connection failed - check your environment variables\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📖 See SUPABASE_SETUP.md for setup instructions\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 RecruitFlow Backend running on port 5000\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🌐 Frontend URL: http://localhost:5173\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 WebSocket: Enabled\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📋 API Documentation: http://localhost:5000/api\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m⚠️  Please configure Supabase in your .env file\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📖 See SUPABASE_SETUP.md for instructions\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🎉 Server is ready to accept connections!\u001b[39m","timestamp":"2025-08-10 12:54:05:545"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m::1 - - [10/Aug/2025:07:24:26 +0000] \"GET /api/health HTTP/1.1\" 200 201 \"-\" \"curl/8.14.1\"\u001b[39m","timestamp":"2025-08-10 12:54:26:5426"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m::1 - - [10/Aug/2025:07:24:34 +0000] \"GET /api HTTP/1.1\" 200 311 \"-\" \"curl/8.14.1\"\u001b[39m","timestamp":"2025-08-10 12:54:34:5434"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📖 Please set up Supabase - see SUPABASE_SETUP.md\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m⚠️  Supabase configuration not set up yet\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m⚠️  Supabase connection failed - check your environment variables\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📖 See SUPABASE_SETUP.md for setup instructions\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🚀 RecruitFlow Backend running on port 5000\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📊 Environment: development\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🌐 Frontend URL: http://localhost:5173\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🗄️  Database: Supabase\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 WebSocket: Enabled\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📋 API Documentation: http://localhost:5000/api\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m⚠️  Please configure Supabase in your .env file\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📖 See SUPABASE_SETUP.md for instructions\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🎉 Server is ready to accept connections!\u001b[39m","timestamp":"2025-08-10 12:57:03:573"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 20:46:29:4629"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"\u001b[33m🔌 Supabase client initialized with placeholder config\u001b[39m","timestamp":"2025-08-10 20:46:41:4641"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase configuration detected\u001b[39m","timestamp":"2025-08-10 20:47:23:4723"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase configuration detected\u001b[39m","timestamp":"2025-08-10 20:47:29:4729"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase configuration detected\u001b[39m","timestamp":"2025-08-10 20:47:43:4743"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m✅ Supabase configuration detected\u001b[39m","timestamp":"2025-08-10 20:47:48:4748"}

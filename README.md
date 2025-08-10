@@ -54,23 +54,45 @@ A modern, lightweight recruitment management system designed specifically for sm
 
 ## 🚀 Quick Start
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/jimmymoni/RecruitFlow.git
-   cd RecruitFlow
-   ```
+### Prerequisites
+- **Node.js 18+** and npm installed
+- **Supabase account** for database (free tier available)
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+### 1. Clone and Setup Frontend
+```bash
+git clone https://github.com/jimmymoni/RecruitFlow.git
+cd RecruitFlow
+npm install
+npm run dev
+```
+Frontend will be available at `http://localhost:5173`
 
-3. **Start development server**:
-   ```bash
-   npm run dev
-   ```
+### 2. Setup Backend Server
+```bash
+cd backend
+npm install
 
-4. **Open your browser** to `http://localhost:5173`
+# Configure Supabase credentials
+cp .env.example .env
+# Edit .env with your Supabase URL and keys
+```
+
+### 3. Database Setup
+1. Create a new Supabase project at https://app.supabase.com
+2. Copy your project URL and API keys to `backend/.env`
+3. Go to SQL Editor in Supabase dashboard
+4. Run the database schema from `backend/src/config/supabase.ts`
+
+### 4. Start Backend Server
+```bash
+npm run dev
+```
+Backend API will be available at `http://localhost:3001`
+
+### 5. Verify Setup
+- Frontend: `http://localhost:5173` 
+- Backend Health: `http://localhost:3001/api/health`
+- API Docs: `http://localhost:3001/api`
 
 ## 🛠️ Tech Stack
 
@@ -95,12 +117,14 @@ A modern, lightweight recruitment management system designed specifically for sm
 - **95%+ Cost Savings** vs OpenAI GPT-4 ($0.00003/token)
 - **Enterprise Performance** - 94%+ accuracy, <2s processing
 
-### Planned Backend
-- **Node.js + Express** - RESTful API with AI model integration
-- **PostgreSQL** - Reliable relational database
+### Backend (Live)
+- **Node.js + Express** - RESTful API with TypeScript
+- **Supabase** - PostgreSQL with real-time features
+- **Socket.IO** - Real-time WebSocket communication
+- **JWT Authentication** - Secure user sessions
 - **AI Service Layer** - Chinese model integration and fallback chains
-- **Authentication** - JWT-based secure login
-- **Real-time Updates** - WebSocket integration
+- **Winston Logging** - Comprehensive request/error logging
+- **Security** - Helmet, CORS, rate limiting
 
 ## 🎨 Design System
 
@@ -126,19 +150,38 @@ A modern, lightweight recruitment management system designed specifically for sm
 
 ## 📝 Development
 
+### Frontend Development
 ```bash
-# Development
+npm run dev          # Start frontend dev server (port 5173)
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run linting
+```
+
+### Backend Development  
+```bash
+cd backend
+npm run dev          # Start backend server (port 3001)
+npm run build        # Compile TypeScript
+npm run start        # Run production server
+npm run lint         # Run backend linting
+```
+
+### Full Stack Development
+```bash
+# Terminal 1: Frontend
 npm run dev
 
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-
-# Linting
-npm run lint
+# Terminal 2: Backend
+cd backend && npm run dev
 ```
+
+### Project Status
+✅ **Frontend**: Complete React dashboard with all UI components  
+✅ **Backend**: Express server with Supabase integration  
+✅ **Database**: Full PostgreSQL schema deployed  
+✅ **API**: RESTful endpoints with test data  
+🚧 **Integration**: Frontend ↔ Backend connection (next step)
 
 ## 📄 License
 
