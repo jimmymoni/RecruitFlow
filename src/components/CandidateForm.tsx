@@ -16,6 +16,7 @@ import {
   Plus
 } from 'lucide-react'
 import { Candidate, CandidateFormData } from '../types/candidate'
+import ImageUpload from './ImageUpload'
 
 interface CandidateFormProps {
   candidate?: Candidate
