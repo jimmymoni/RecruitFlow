@@ -249,12 +249,51 @@ src/
 - **Premium UI**: Dark theme with neon accents and smooth animations
 - **Responsive Design**: Mobile-optimized layouts and touch interactions
 
+### Development Strategy: Test-First Approach
+**For critical features (authentication, payments, data operations), always:**
+
+1. **Build a minimal test component first**
+   - Create simple debug panels (like `AuthTest.tsx`)
+   - Use inline styles for quick visibility
+   - Include console logging for debugging
+   - Position as floating panel (`position: fixed`)
+
+2. **Test core functionality isolated**
+   - Verify API connections work
+   - Test state management separately
+   - Validate data flow before UI complexity
+   - Use simple form inputs with clear styling
+
+3. **Benefits of this approach:**
+   - ✅ Faster debugging and iteration
+   - ✅ Isolates issues from UI complexity
+   - ✅ Provides immediate feedback
+   - ✅ Safer for critical features
+   - ✅ Creates reusable test utilities
+
+4. **Example pattern:**
+```tsx
+// Always create [FeatureName]Test.tsx first
+export const AuthTest = () => {
+  // Simple form with visible inputs
+  // Direct API calls with logging
+  // Clear success/error feedback
+  // Floating panel positioning
+}
+```
+
+5. **Once core works, integrate into main UI**
+   - Transfer working logic to production components
+   - Keep test component for future debugging
+   - Document any edge cases discovered
+
 ### Development Workflow
 1. **Planning**: Use `/feature-plan` command before starting new features
-2. **Implementation**: Follow established patterns and component structure
-3. **Testing**: Use `/test-feature` to verify functionality
-4. **Review**: Use `/ui-review` to ensure design consistency
-5. **Commit**: Use `/commit-check` before committing changes
+2. **Test-First**: Build minimal test component for critical features
+3. **Implementation**: Follow established patterns and component structure
+4. **Testing**: Use `/test-feature` to verify functionality
+5. **Review**: Use `/ui-review` to ensure design consistency
+6. **Commit**: Use `/commit-check` before committing changes
 
 ### Custom Commands Available
 - `/feature-plan` - Strategic feature planning and architecture

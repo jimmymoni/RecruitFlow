@@ -34,6 +34,14 @@ import AIDashboard from './components/AIDashboard'
 import WorkflowAutomation from './components/WorkflowAutomation'
 import FileUpload from './components/FileUpload'
 import DocumentViewer from './components/DocumentViewer'
+import BackendStatus from './components/BackendStatus'
+import AuthHeader from './components/AuthHeader'
+import AuthHeaderSimple from './components/AuthHeaderSimple'
+import AuthHeaderFixed from './components/AuthHeaderFixed'
+import AuthHeaderTest from './components/AuthHeaderTest'
+import AuthSystem from './components/AuthSystem'
+import ProtectedRoute from './components/ProtectedRoute'
+import { useUser } from './contexts/UserContext'
 import { Candidate, CandidateFormData } from './types/candidate'
 import { Job, JobFormData } from './types/job'
 import { Client, ClientFormData } from './types/client'
@@ -42,6 +50,7 @@ import { mockCandidates } from './data/mockCandidates'
 import { mockJobs } from './data/mockJobs'
 import { mockClients, mockClientInteractions } from './data/mockClients'
 import { mockDocuments } from './data/mockDocuments'
+import { useDashboardStats } from './hooks/useDashboardStats'
 
 // Mock data
 const mockStats = {
@@ -62,6 +71,8 @@ const recentActivity = [
 
 function App() {
   const { theme, timePeriod } = useTimeBasedTheme()
+  const dashboardStats = useDashboardStats()
+  const { user, isLoading } = useUser()
   const [activeTab, setActiveTab] = useState('dashboard')
   const [showCandidateForm, setShowCandidateForm] = useState(false)
   const [editingCandidate, setEditingCandidate] = useState<Candidate | undefined>()
@@ -315,8 +326,18 @@ function App() {
           <div className="flex items-center justify-between">
             <div>
               <p className={`text-sm font-medium ${theme.textSecondary} transition-colors duration-[5000ms] ease-in-out`}>Active Candidates</p>
-              <p className={`text-3xl font-bold ${theme.textPrimary} mt-2 transition-colors duration-[5000ms] ease-in-out`}>{mockStats.activeCandidates}</p>
-              <p className="text-sm text-green-600 mt-1 transition-colors duration-[5000ms] ease-in-out">+12% from last month</p>
+              <p className={`text-3xl font-bold ${theme.textPrimary} mt-2 transition-colors duration-[5000ms] ease-in-out`}>
+                {dashboardStats.loading ? '...' : dashboardStats.activeCandidates}
+              </p>
+              <p className="text-sm mt-1 transition-colors duration-[5000ms] ease-in-out">
+                {dashboardStats.error ? (
+                  <span className="text-red-400">API Error</span>
+                ) : dashboardStats.loading ? (
+                  <span className="text-blue-400">Loading...</span>
+                ) : (
+                  <span className="text-green-600">Live Data</span>
+                )}
+              </p>
             </div>
             <div className="h-12 w-12 bg-gradient-to-br from-neon-blue/20 to-primary-600/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
               <Users className="h-6 w-6 text-neon-blue" />
@@ -469,6 +490,15 @@ function App() {
               </motion.div>
             </div>
           </motion.div>
+
+          {/* System Status */}
+          <motion.div 
+            whileHover={{ y: -2 }}
+            variants={itemVariants}
+            className={`${theme.cardBackground} rounded-xl ${theme.glow} ${theme.border} p-6 mb-6 backdrop-blur-sm transition-all duration-[5000ms] ease-in-out`}
+          >
+            <BackendStatus />
+          </motion.div>
         </div>
 
         {/* Sidebar */}
@@ -547,6 +577,7 @@ function App() {
             </div>
           </motion.div>
         </div>
+
       </motion.div>
     </motion.div>
   )
@@ -675,6 +706,23 @@ function App() {
     }
   }
 
+  // If loading, show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+          <p className="text-white text-lg">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // If not authenticated, show AuthSystem
+  if (!user) {
+    return <AuthSystem />
+  }
+
   return (
     <div className={`min-h-screen transition-all duration-[5000ms] ease-in-out ${theme.background} ${theme.textPrimary}`}>
       {/* Header */}
@@ -782,14 +830,14 @@ function App() {
         </div>
 
             {/* Search and Actions */}
-            <div className="flex items-center space-x-3 flex-shrink-0">
+            <div className="flex items-center space-x-2 flex-shrink-0">
               <div className="relative hidden lg:block">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Search className="h-4 w-4 text-gray-400" />
                 </div>
                 <input
                   type="text"
-                  className={`block w-48 xl:w-56 pl-10 pr-3 py-2 ${theme.border} rounded-lg leading-5 ${theme.cardBackground} backdrop-blur-sm placeholder-gray-400 ${theme.textPrimary} focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-[5000ms] ease-in-out`}
+                  className={`block w-40 xl:w-48 pl-10 pr-3 py-2 ${theme.border} rounded-lg leading-5 ${theme.cardBackground} backdrop-blur-sm placeholder-gray-400 ${theme.textPrimary} focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-[5000ms] ease-in-out`}
                   placeholder="Search candidates, jobs..."
                 />
               </div>
@@ -810,6 +858,10 @@ function App() {
               >
                 <Bell className="h-5 w-5" />
               </motion.button>
+              
+              {/* Authentication System */}
+              <AuthSystem />
+              
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -822,7 +874,7 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content */}
+      {/* Main Content - Conditionally Rendered */}
       {renderContent()}
 
       {/* Candidate Form Modal */}
@@ -880,6 +932,7 @@ function App() {
           }
         }}
       />
+
     </div>
   )
 }
