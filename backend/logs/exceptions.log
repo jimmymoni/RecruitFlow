@@ -324,3 +324,249 @@
 [31m    at node:internal/modules/cjs/loader:1895:10[39m
 [31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
 [31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+2025-08-12 00:46:12:4612 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:46:13:4613 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:47:12:4712 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:47:12:4712 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:47:29:4729 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:48:07:487 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:48:27:4827 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:48:44:4844 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 00:49:00:490 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/routes/candidates.ts(431,51): error TS2769: No overload matches this call.[39m
+[31m  Overload 1 of 3, '(entityLikeArray: DeepPartial<Communication>[]): Communication[]', gave the following error.[39m
+[31m    Object literal may only specify known properties, and 'type' does not exist in type 'DeepPartial<Communication>[]'.[39m
+[31m  Overload 2 of 3, '(entityLike: DeepPartial<Communication>): Communication', gave the following error.[39m
+[31m    Type 'Date | null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+[31m      Type 'null' is not assignable to type 'DeepPartial<Date> | undefined'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 04:44:08:448 [31merror[39m: [31muncaughtException: EPIPE: broken pipe, write[39m
+[31mError: EPIPE: broken pipe, write[39m
+[31m    at Socket._write (node:internal/net:63:18)[39m
+[31m    at writeOrBuffer (node:internal/streams/writable:572:12)[39m
+[31m    at _write (node:internal/streams/writable:501:10)[39m
+[31m    at Socket.Writable.write (node:internal/streams/writable:510:10)[39m
+[31m    at Console.log (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston\lib\winston\transports\console.js:87:23)[39m
+[31m    at Console._write (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston-transport\modern.js:103:17)[39m
+[31m    at doWrite (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:390:139)[39m
+[31m    at writeOrBuffer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)[39m
+[31m    at Console.Writable.write (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)[39m
+[31m    at DerivedLogger.ondata (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)[39m

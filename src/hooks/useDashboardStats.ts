@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getCandidates, getUsers } from '../services/api'
+import { getCandidates, getCandidateStats, getUsers } from '../services/api'
 
 interface DashboardStats {
   activeCandidates: number
@@ -23,14 +23,14 @@ export function useDashboardStats(): DashboardStats {
       try {
         setStats(prev => ({ ...prev, loading: true, error: null }))
         
-        // Fetch candidates and users in parallel
-        const [candidatesResponse, usersResponse] = await Promise.all([
-          getCandidates().catch(() => ({ count: 0 })),
+        // Fetch candidate stats and users in parallel
+        const [candidateStatsResponse, usersResponse] = await Promise.all([
+          getCandidateStats().catch(() => ({ stats: { total: 0, activeStatuses: 0 } })),
           getUsers().catch(() => ({ count: 0 }))
         ])
 
         setStats({
-          activeCandidates: candidatesResponse.count || 0,
+          activeCandidates: candidateStatsResponse.stats?.activeStatuses || 0,
           openJobs: 0, // TODO: Add jobs API endpoint
           totalUsers: usersResponse.count || 0,
           loading: false,

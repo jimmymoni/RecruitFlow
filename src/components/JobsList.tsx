@@ -12,7 +12,11 @@ import {
   Trash2,
   Filter,
   Search,
-  Plus
+  Plus,
+  X,
+  Clock,
+  CheckCircle,
+  AlertCircle
 } from 'lucide-react'
 import { Job } from '../types/job'
 
@@ -21,12 +25,14 @@ interface JobsListProps {
   onEditJob: (job: Job) => void
   onDeleteJob: (jobId: string) => void
   onCreateJob: () => void
+  onViewJob?: (job: Job) => void
 }
 
-const JobsList = ({ jobs, onEditJob, onDeleteJob, onCreateJob }: JobsListProps) => {
+const JobsList = ({ jobs, onEditJob, onDeleteJob, onCreateJob, onViewJob }: JobsListProps) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState<'all' | Job['status']>('all')
   const [priorityFilter, setPriorityFilter] = useState<'all' | Job['priority']>('all')
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null)
 
   const filteredJobs = jobs.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -175,7 +181,8 @@ const JobsList = ({ jobs, onEditJob, onDeleteJob, onCreateJob }: JobsListProps) 
               key={job.id}
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-6 shadow-black/20 hover:shadow-glow transition-all duration-300"
+              className="bg-black/30 backdrop-blur-xl border border-white/10 rounded-xl p-6 shadow-black/20 hover:shadow-glow transition-all duration-300 cursor-pointer"
+              onClick={() => setSelectedJob(job)}
             >
               {/* Job Header */}
               <div className="flex items-start justify-between mb-4">
@@ -202,7 +209,10 @@ const JobsList = ({ jobs, onEditJob, onDeleteJob, onCreateJob }: JobsListProps) 
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    onClick={() => onEditJob(job)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onEditJob(job)
+                    }}
                     className="p-2 text-white/70 hover:text-neon-blue hover:bg-white/10 rounded-lg transition-colors"
                   >
                     <Edit className="h-4 w-4" />
@@ -210,7 +220,10 @@ const JobsList = ({ jobs, onEditJob, onDeleteJob, onCreateJob }: JobsListProps) 
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    onClick={() => onDeleteJob(job.id)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onDeleteJob(job.id)
+                    }}
                     className="p-2 text-white/70 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
                   >
                     <Trash2 className="h-4 w-4" />
@@ -299,6 +312,158 @@ const JobsList = ({ jobs, onEditJob, onDeleteJob, onCreateJob }: JobsListProps) 
           </motion.div>
         )}
       </div>
+
+      {/* Job Detail Modal */}
+      {selectedJob && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedJob(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-gradient-to-br from-dark-800 to-dark-700 rounded-xl border border-dark-600 shadow-premium max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-dark-600">
+              <div className="flex items-center space-x-3">
+                <div className="h-10 w-10 bg-gradient-to-r from-neon-blue to-primary-500 rounded-lg flex items-center justify-center">
+                  <Briefcase className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-white">{selectedJob.title}</h2>
+                  <p className="text-dark-300">{selectedJob.company}</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setSelectedJob(null)}
+                className="p-2 text-dark-400 hover:text-white hover:bg-dark-600 rounded-lg transition-colors"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6 space-y-6">
+              {/* Job Status & Basic Info */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <span className={`px-3 py-1 text-xs font-medium rounded-full border ${getStatusColor(selectedJob.status)}`}>
+                      {selectedJob.status}
+                    </span>
+                    <span className={`px-2 py-1 text-xs font-medium rounded-full ${getPriorityColor(selectedJob.priority)}`}>
+                      {selectedJob.priority}
+                    </span>
+                  </div>
+                  <div className="flex items-center space-x-1 text-dark-300">
+                    <MapPin className="h-4 w-4" />
+                    <span className="text-sm">{selectedJob.location}</span>
+                  </div>
+                </div>
+                <div className="space-y-2 text-right">
+                  <div className="flex items-center justify-end space-x-1 text-dark-300">
+                    <DollarSign className="h-4 w-4" />
+                    <span className="text-sm">
+                      ${selectedJob.salaryMin.toLocaleString()} - ${selectedJob.salaryMax.toLocaleString()} {selectedJob.currency}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-end space-x-4 text-sm text-dark-400">
+                    <div className="flex items-center space-x-1">
+                      <Users className="h-4 w-4" />
+                      <span>{selectedJob.applicationsCount}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Eye className="h-4 w-4" />
+                      <span>{selectedJob.viewsCount}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Job Description */}
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3">Job Description</h3>
+                <p className="text-dark-200 leading-relaxed">{selectedJob.description}</p>
+              </div>
+
+              {/* Requirements */}
+              {selectedJob.requirements && (
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3">Requirements</h3>
+                  <p className="text-dark-200 leading-relaxed">{selectedJob.requirements}</p>
+                </div>
+              )}
+
+              {/* Tags */}
+              {selectedJob.tags.length > 0 && (
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-3">Skills & Tags</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedJob.tags.map(tag => (
+                      <span key={tag} className="px-3 py-1 bg-neon-blue/20 text-neon-blue text-sm rounded-full border border-neon-blue/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Timeline Info */}
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-dark-600">
+                <div className="flex items-center space-x-2 text-dark-300">
+                  <Calendar className="h-4 w-4" />
+                  <div>
+                    <p className="text-sm font-medium">Posted</p>
+                    <p className="text-sm">{new Date(selectedJob.postedAt).toLocaleDateString()}</p>
+                  </div>
+                </div>
+                {selectedJob.deadline && (
+                  <div className="flex items-center space-x-2 text-dark-300">
+                    <Clock className="h-4 w-4" />
+                    <div>
+                      <p className="text-sm font-medium">Deadline</p>
+                      <p className="text-sm">{new Date(selectedJob.deadline).toLocaleDateString()}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center space-x-3 pt-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    onEditJob(selectedJob)
+                    setSelectedJob(null)
+                  }}
+                  className="flex items-center space-x-2 bg-gradient-to-r from-neon-blue to-primary-600 text-white px-6 py-2 rounded-lg shadow-glow hover:shadow-xl transition-all duration-300"
+                >
+                  <Edit className="h-4 w-4" />
+                  <span>Edit Job</span>
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => {
+                    if (onViewJob) onViewJob(selectedJob)
+                  }}
+                  className="flex items-center space-x-2 bg-dark-600 hover:bg-dark-500 text-white px-6 py-2 rounded-lg transition-all duration-300"
+                >
+                  <Eye className="h-4 w-4" />
+                  <span>View Applications</span>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   )
 }

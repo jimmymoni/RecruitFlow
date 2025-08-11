@@ -19,15 +19,25 @@ import {
   Zap,
   MoreHorizontal,
   ChevronDown,
-  Brain
+  Brain,
+  X,
+  Mail,
+  Phone,
+  Globe,
+  MapPin,
+  Star,
+  Eye,
+  Edit
 } from 'lucide-react'
 import CandidatesList from './components/CandidatesList'
+import CandidatesListAPI from './components/CandidatesListAPI'
 import CandidateForm from './components/CandidateForm'
 import JobsList from './components/JobsList'
 import JobForm from './components/JobForm'
 import ClientsList from './components/ClientsList'
 import ClientForm from './components/ClientForm'
 import TeamsChat from './components/TeamsChat'
+import WorkingDiscordStyle from './components/WorkingDiscordStyle'
 import AnalyticsDashboard from './components/AnalyticsDashboard'
 import SmartIntegrations from './components/SmartIntegrations'
 import AIDashboard from './components/AIDashboard'
@@ -41,6 +51,7 @@ import AuthHeaderFixed from './components/AuthHeaderFixed'
 import AuthHeaderTest from './components/AuthHeaderTest'
 import AuthSystem from './components/AuthSystem'
 import ProtectedRoute from './components/ProtectedRoute'
+import SearchOverlay from './components/SearchOverlay'
 import { useUser } from './contexts/UserContext'
 import { Candidate, CandidateFormData } from './types/candidate'
 import { Job, JobFormData } from './types/job'
@@ -88,6 +99,7 @@ function App() {
   const [showFileUpload, setShowFileUpload] = useState(false)
   const [selectedDocument, setSelectedDocument] = useState<Document | null>(null)
   const [showMoreDropdown, setShowMoreDropdown] = useState(false)
+  const [showSearchOverlay, setShowSearchOverlay] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown when clicking outside
@@ -265,10 +277,8 @@ function App() {
   // Secondary navigation - tools and utilities
   const secondaryNavigation = [
     { id: 'documents', label: 'Documents', icon: FileText },
-    { id: 'workflows', label: 'Workflows', icon: Zap },
-    { id: 'integrations', label: 'Integrations', icon: Settings },
-    { id: 'ai', label: 'AI Features', icon: Brain },
-    { id: 'reports', label: 'Reports', icon: BarChart3 },
+    { id: 'ai', label: 'AI Tools', icon: Brain },
+    { id: 'reports', label: 'Analytics', icon: BarChart3 },
   ]
 
 
@@ -437,6 +447,7 @@ function App() {
               <motion.button 
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveTab('reports')}
                 className="flex flex-col items-center p-4 border-2 border-dashed border-dark-500 rounded-lg hover:border-neon-purple hover:bg-dark-600/50 hover:shadow-glow transition-all duration-300"
               >
                 <BarChart3 className="h-6 w-6 text-dark-300 mb-2" />
@@ -667,9 +678,9 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'teams':
-        return <TeamsChat currentUserId="user-1" />
+        return <WorkingDiscordStyle />
       case 'candidates':
-        return <CandidatesList />
+        return <CandidatesListAPI />
       case 'jobs':
         return (
           <JobsList 
@@ -692,12 +703,8 @@ function App() {
         )
       case 'documents':
         return renderDocuments()
-      case 'integrations':
-        return <SmartIntegrations />
       case 'ai':
         return <AIDashboard />
-      case 'workflows':
-        return <WorkflowAutomation />
       case 'reports':
         return <AnalyticsDashboard />
       case 'dashboard':
@@ -831,24 +838,15 @@ function App() {
 
             {/* Search and Actions */}
             <div className="flex items-center space-x-2 flex-shrink-0">
-              <div className="relative hidden lg:block">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-4 w-4 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  className={`block w-40 xl:w-48 pl-10 pr-3 py-2 ${theme.border} rounded-lg leading-5 ${theme.cardBackground} backdrop-blur-sm placeholder-gray-400 ${theme.textPrimary} focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-[5000ms] ease-in-out`}
-                  placeholder="Search candidates, jobs..."
-                />
-              </div>
-              
-              {/* Mobile search button */}
+              {/* Search Icon Button - replaces full search bar */}
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`lg:hidden p-2 ${theme.textSecondary} hover:${theme.textPrimary} hover:bg-white/10 rounded-lg transition-colors`}
+                onClick={() => setShowSearchOverlay(true)}
+                className={`p-2 ${theme.textSecondary} hover:${theme.textPrimary} hover:bg-white/10 rounded-lg transition-colors duration-300 group`}
+                title="Search candidates, jobs, clients..."
               >
-                <Search className="h-5 w-5" />
+                <Search className="h-5 w-5 group-hover:text-blue-400 transition-colors duration-300" />
               </motion.button>
               
               <motion.button 
@@ -932,6 +930,268 @@ function App() {
           }
         }}
       />
+
+      {/* Search Overlay */}
+      <SearchOverlay
+        isOpen={showSearchOverlay}
+        onClose={() => setShowSearchOverlay(false)}
+        onSelect={(result) => {
+          console.log('Selected search result:', result)
+          // Handle search result selection - navigate to appropriate tab/view
+          switch (result.type) {
+            case 'candidate':
+              setActiveTab('candidates')
+              break
+            case 'job':
+              setActiveTab('jobs')
+              break
+            case 'client':
+              setActiveTab('clients')
+              break
+          }
+        }}
+      />
+
+      {/* Client Detail Modal */}
+      {selectedClient && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedClient(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-gradient-to-br from-dark-800 to-dark-700 rounded-xl border border-dark-600 shadow-premium max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-6 border-b border-dark-600">
+              <div className="flex items-center space-x-3">
+                <div className="h-12 w-12 bg-gradient-to-r from-neon-blue to-primary-500 rounded-lg flex items-center justify-center">
+                  <Building2 className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">{selectedClient.companyName}</h2>
+                  <p className="text-dark-300">{selectedClient.industry}</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setSelectedClient(null)}
+                className="p-2 text-dark-400 hover:text-white hover:bg-dark-600 rounded-lg transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Left Column - Client Details */}
+                <div className="lg:col-span-2 space-y-6">
+                  {/* Basic Information */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Company Information</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-3">
+                        <div className="flex items-center space-x-2 text-dark-200">
+                          <Building2 className="h-4 w-4" />
+                          <span className="font-medium">Industry:</span>
+                          <span>{selectedClient.industry}</span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-dark-200">
+                          <Users className="h-4 w-4" />
+                          <span className="font-medium">Size:</span>
+                          <span>{selectedClient.companySize}</span>
+                        </div>
+                        {selectedClient.website && (
+                          <div className="flex items-center space-x-2 text-dark-200">
+                            <Globe className="h-4 w-4" />
+                            <a 
+                              href={selectedClient.website} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-neon-blue hover:text-blue-300 underline"
+                            >
+                              {selectedClient.website}
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-start space-x-2 text-dark-200">
+                          <MapPin className="h-4 w-4 mt-0.5" />
+                          <div>
+                            <p className="font-medium">Address:</p>
+                            <p className="text-sm">
+                              {selectedClient.address.street}<br />
+                              {selectedClient.address.city}, {selectedClient.address.state} {selectedClient.address.zipCode}<br />
+                              {selectedClient.address.country}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Primary Contact */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Primary Contact</h3>
+                    <div className="bg-dark-700/50 rounded-lg p-4 space-y-3">
+                      <h4 className="font-semibold text-white">{selectedClient.primaryContact.name}</h4>
+                      <p className="text-dark-300">{selectedClient.primaryContact.title}</p>
+                      <div className="flex flex-col space-y-2">
+                        <div className="flex items-center space-x-2 text-dark-200">
+                          <Mail className="h-4 w-4" />
+                          <a href={`mailto:${selectedClient.primaryContact.email}`} className="text-neon-blue hover:text-blue-300">
+                            {selectedClient.primaryContact.email}
+                          </a>
+                        </div>
+                        <div className="flex items-center space-x-2 text-dark-200">
+                          <Phone className="h-4 w-4" />
+                          <a href={`tel:${selectedClient.primaryContact.phone}`} className="text-neon-blue hover:text-blue-300">
+                            {selectedClient.primaryContact.phone}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Recent Activity */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
+                    <div className="space-y-3">
+                      {mockClientInteractions
+                        .filter(interaction => interaction.clientId === selectedClient.id)
+                        .slice(0, 5)
+                        .map((interaction, index) => (
+                        <div key={index} className="flex items-start space-x-3 p-3 bg-dark-700/30 rounded-lg">
+                          <div className={`w-2 h-2 rounded-full mt-2 ${
+                            interaction.type === 'meeting' ? 'bg-green-400' :
+                            interaction.type === 'email' ? 'bg-blue-400' :
+                            interaction.type === 'call' ? 'bg-yellow-400' : 'bg-gray-400'
+                          }`} />
+                          <div>
+                            <p className="text-white font-medium">{interaction.subject}</p>
+                            <p className="text-dark-300 text-sm">{interaction.notes}</p>
+                            <p className="text-dark-500 text-xs mt-1">
+                              {new Date(interaction.date).toLocaleDateString()} - {interaction.type}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Analytics & Stats */}
+                <div className="space-y-6">
+                  {/* Client Status */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Status</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <span className={`px-3 py-1 text-sm font-medium rounded-full border ${
+                          selectedClient.status === 'active' ? 'bg-green-500/20 text-green-400 border-green-500/30' :
+                          selectedClient.status === 'inactive' ? 'bg-gray-500/20 text-gray-400 border-gray-500/30' :
+                          selectedClient.status === 'prospective' ? 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' :
+                          'bg-orange-500/20 text-orange-400 border-orange-500/30'
+                        }`}>
+                          {selectedClient.status}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span className={`px-3 py-1 text-sm font-medium rounded-full ${
+                          selectedClient.tier === 'bronze' ? 'bg-amber-600/20 text-amber-400' :
+                          selectedClient.tier === 'silver' ? 'bg-gray-400/20 text-gray-300' :
+                          selectedClient.tier === 'gold' ? 'bg-yellow-500/20 text-yellow-400' :
+                          'bg-purple-500/20 text-purple-400'
+                        }`}>
+                          {selectedClient.tier === 'bronze' ? '🥉' :
+                           selectedClient.tier === 'silver' ? '🥈' :
+                           selectedClient.tier === 'gold' ? '🥇' : '💎'} {selectedClient.tier}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Star className="h-4 w-4 text-yellow-400" />
+                        <span className="text-dark-200">{selectedClient.satisfactionRating}/5 satisfaction</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Metrics */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-4">Key Metrics</h3>
+                    <div className="space-y-4">
+                      <div className="bg-dark-700/50 rounded-lg p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-dark-300">Total Revenue</span>
+                          <span className="text-white font-semibold">${selectedClient.totalRevenue?.toLocaleString() || 'N/A'}</span>
+                        </div>
+                      </div>
+                      <div className="bg-dark-700/50 rounded-lg p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-dark-300">Active Jobs</span>
+                          <span className="text-white font-semibold">{selectedClient.activeJobsCount || 0}</span>
+                        </div>
+                      </div>
+                      <div className="bg-dark-700/50 rounded-lg p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-dark-300">Placements</span>
+                          <span className="text-white font-semibold">{selectedClient.placementsCount || 0}</span>
+                        </div>
+                      </div>
+                      <div className="bg-dark-700/50 rounded-lg p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-dark-300">Interactions</span>
+                          <span className="text-white font-semibold">
+                            {mockClientInteractions.filter(i => i.clientId === selectedClient.id).length}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        handleEditClient(selectedClient)
+                        setSelectedClient(null)
+                      }}
+                      className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-neon-blue to-primary-600 text-white px-4 py-2 rounded-lg shadow-glow hover:shadow-xl transition-all duration-300"
+                    >
+                      <Edit className="h-4 w-4" />
+                      <span>Edit Client</span>
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full flex items-center justify-center space-x-2 bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg transition-all duration-300"
+                    >
+                      <MessageSquare className="h-4 w-4" />
+                      <span>Contact Client</span>
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full flex items-center justify-center space-x-2 bg-dark-600 hover:bg-dark-500 text-white px-4 py-2 rounded-lg transition-all duration-300"
+                    >
+                      <Briefcase className="h-4 w-4" />
+                      <span>View Jobs</span>
+                    </motion.button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
 
     </div>
   )
