@@ -109,3 +109,96 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 05:05:29:529"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 05:06:05:65"}
 {"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 05:06:06:66"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 05:16:58:1658"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 05:16:59:1659"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:18:36:1836"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:18:37:1837"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:18:40:1840"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:18:41:1841"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:23:11:2311"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:23:12:2312"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:23:22:2322"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:23:22:2322"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:29:42:2942"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:29:43:2943"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 09:32:21:3221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 09:32:21:3221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 09:32:21:3221"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 09:33:59:3359"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 09:33:59:3359"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 09:33:59:3359"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 09:34:11:3411"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 09:34:11:3411"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 09:34:11:3411"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:34:32:3432"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 09:34:33:3433"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:05:35:535"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 10:05:35:535"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 10:05:35:535"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:05:56:556"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 10:05:56:556"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 10:05:56:556"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:06:05:65"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 10:06:05:65"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 10:06:05:65"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:06:50:650"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:11:40:1140"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:12:19:1219"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:14:05:145"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 10:52:20:5220"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 11:10:57:1057"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 11:10:57:1057"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 11:10:57:1057"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 11:11:17:1117"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 11:11:18:1118"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 11:11:18:1118"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 11:25:36:2536"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 11:25:36:2536"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 11:25:36:2536"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 11:25:55:2555"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 11:25:55:2555"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 11:25:55:2555"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 11:28:39:2839"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32mAuthenticated user: test@test.com\u001b[39m","timestamp":"2025-08-12 11:28:40:2840"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 17:56:00:560"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 17:56:00:560"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 17:56:00:560"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 17:56:27:5627"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 17:56:27:5627"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 17:56:27:5627"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 18:12:07:127"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 18:12:07:127"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 18:12:07:127"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 18:13:24:1324"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 18:13:24:1324"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 18:13:24:1324"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 18:16:21:1621"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 18:16:21:1621"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 18:16:21:1621"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:13:54:1354"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:13:54:1354"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:13:54:1354"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:14:26:1426"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:14:26:1426"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:14:26:1426"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:14:44:1444"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:14:44:1444"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:14:44:1444"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:17:17:1717"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:17:17:1717"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:17:17:1717"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:21:53:2153"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:21:53:2153"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:21:53:2153"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:22:28:2228"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:22:28:2228"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:22:28:2228"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:23:32:2332"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:23:32:2332"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:23:32:2332"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:24:39:2439"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:24:39:2439"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:24:39:2439"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔌 Supabase client initialized\u001b[39m","timestamp":"2025-08-12 19:25:08:258"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m📍 URL: https://wbagxpxwhvrkgknurspr.supabase.co\u001b[39m","timestamp":"2025-08-12 19:25:08:258"}
+{"level":"\u001b[32minfo\u001b[39m","message":"\u001b[32m🔑 Using API Key: eyJhbGciOiJIUzI1NiIs...\u001b[39m","timestamp":"2025-08-12 19:25:08:258"}

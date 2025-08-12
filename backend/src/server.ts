@@ -8,9 +8,11 @@ import jobsRoutes from './routes/jobs-supabase'
 import clientsRoutes from './routes/clients-supabase'
 import filesRoutes from './routes/files-supabase'
 import teamsRoutes from './routes/teams-supabase'
+import teamsCollabRoutes from './routes/teams'
 import tasksRoutes from './routes/tasks-supabase'
 import firmAuthRoutes from './routes/firm-auth'
 import chatRoutes from './routes/chat'
+// import aiParseRoutes from './routes/ai-parse'
 
 dotenv.config()
 
@@ -46,9 +48,11 @@ app.use('/api/jobs', jobsRoutes)
 app.use('/api/clients', clientsRoutes)
 app.use('/api/files', filesRoutes)
 app.use('/api/teams', teamsRoutes)
+app.use('/api/teams-collab', teamsCollabRoutes)
 app.use('/api/tasks', tasksRoutes)
 app.use('/api/firm-auth', firmAuthRoutes)
 app.use('/api/chat', chatRoutes)
+// app.use('/api/ai', aiParseRoutes) - disabled temporarily
 
 // Test endpoints
 app.get('/api/health', (req, res) => {

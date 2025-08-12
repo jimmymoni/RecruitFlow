@@ -38,17 +38,18 @@ import ClientsList from './components/ClientsList'
 import ClientForm from './components/ClientForm'
 import TeamsChat from './components/TeamsChat'
 import WorkingDiscordStyle from './components/WorkingDiscordStyle'
+import TeamsSimple from './components/TeamsSimple'
+import AICandidateReview from './components/AICandidateReview'
+import WorkflowShortcuts from './components/WorkflowShortcuts'
 import AnalyticsDashboard from './components/AnalyticsDashboard'
 import SmartIntegrations from './components/SmartIntegrations'
 import AIDashboard from './components/AIDashboard'
+import AIToolsTester from './components/AIToolsTester'
 import WorkflowAutomation from './components/WorkflowAutomation'
 import FileUpload from './components/FileUpload'
 import DocumentViewer from './components/DocumentViewer'
 import BackendStatus from './components/BackendStatus'
 import AuthHeader from './components/AuthHeader'
-import AuthHeaderSimple from './components/AuthHeaderSimple'
-import AuthHeaderFixed from './components/AuthHeaderFixed'
-import AuthHeaderTest from './components/AuthHeaderTest'
 import AuthSystem from './components/AuthSystem'
 import ProtectedRoute from './components/ProtectedRoute'
 import SearchOverlay from './components/SearchOverlay'
@@ -100,9 +101,10 @@ function App() {
   const [selectedDocument, setSelectedDocument] = useState<Document | null>(null)
   const [showMoreDropdown, setShowMoreDropdown] = useState(false)
   const [showSearchOverlay, setShowSearchOverlay] = useState(false)
+  const [showWorkflowShortcuts, setShowWorkflowShortcuts] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside and handle keyboard shortcuts
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -110,9 +112,30 @@ function App() {
       }
     }
 
+    const handleKeyDown = (event: KeyboardEvent) => {
+      // Command/Ctrl + K for workflow shortcuts
+      if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+        event.preventDefault()
+        setShowWorkflowShortcuts(true)
+      }
+      // Command/Ctrl + / for search
+      if ((event.metaKey || event.ctrlKey) && event.key === '/') {
+        event.preventDefault()
+        setShowSearchOverlay(true)
+      }
+      // Escape to close any open overlays
+      if (event.key === 'Escape') {
+        setShowWorkflowShortcuts(false)
+        setShowSearchOverlay(false)
+        setShowMoreDropdown(false)
+      }
+    }
+
     document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
     }
   }, [])
 
@@ -278,6 +301,7 @@ function App() {
   const secondaryNavigation = [
     { id: 'documents', label: 'Documents', icon: FileText },
     { id: 'ai', label: 'AI Tools', icon: Brain },
+    { id: 'ai-review', label: 'AI Review', icon: Zap },
     { id: 'reports', label: 'Analytics', icon: BarChart3 },
   ]
 
@@ -678,7 +702,7 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'teams':
-        return <WorkingDiscordStyle />
+        return <TeamsSimple />
       case 'candidates':
         return <CandidatesListAPI />
       case 'jobs':
@@ -704,7 +728,9 @@ function App() {
       case 'documents':
         return renderDocuments()
       case 'ai':
-        return <AIDashboard />
+        return <AIToolsTester />
+      case 'ai-review':
+        return <AICandidateReview />
       case 'reports':
         return <AnalyticsDashboard />
       case 'dashboard':
@@ -1192,6 +1218,21 @@ function App() {
           </motion.div>
         </motion.div>
       )}
+
+      {/* Workflow Shortcuts */}
+      <WorkflowShortcuts
+        isOpen={showWorkflowShortcuts}
+        onClose={() => setShowWorkflowShortcuts(false)}
+        onNavigate={(section) => {
+          setActiveTab(section)
+          setShowWorkflowShortcuts(false)
+        }}
+        onTriggerAI={(type) => {
+          console.log('Trigger AI:', type)
+          // You can add specific AI triggers here
+          setShowWorkflowShortcuts(false)
+        }}
+      />
 
     </div>
   )

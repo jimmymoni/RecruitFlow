@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import MobileTeamsView from './MobileTeamsView'
-import { useDeviceDetection } from '../hooks/useSwipeGestures'
+import { motion } from 'framer-motion'
 import { 
-  Hash, Users, Settings, Mic, Headphones, Plus, Search, Bell, Pin, UserPlus, Inbox, HelpCircle,
-  Bot, Zap, Activity, MessageSquare, Video, FileText, Star, AlertCircle, CheckCircle, Clock,
-  Filter, Menu, X, Send, Smile, Paperclip, Image, AtSign, Calendar, Briefcase, Target,
-  TrendingUp, Eye, Sparkles, ChevronDown, MoreHorizontal, UserCheck, Coffee, Play
+  Hash, Users, Settings, Mic, Headphones, Plus, Search, Bell, Pin, UserPlus, Inbox, HelpCircle
 } from 'lucide-react'
 
 interface ChatThread {
@@ -29,119 +24,18 @@ interface ChatThread {
   }>
 }
 
-interface TeamMember {
-  id: string
-  name: string
-  role: string
-  status: 'online' | 'away' | 'busy' | 'offline'
-  avatar?: string
-  current_activity?: string
-}
-
-const WorkingDiscordStyle: React.FC = () => {
+const TeamsSimple: React.FC = () => {
   const [threads, setThreads] = useState<ChatThread[]>([])
   const [activeThread, setActiveThread] = useState<ChatThread | null>(null)
   const [loading, setLoading] = useState(true)
   const [newMessage, setNewMessage] = useState('')
   const [sending, setSending] = useState(false)
-  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([])
-  const [showAIPanel, setShowAIPanel] = useState(false)
-  const [activeFilter, setActiveFilter] = useState<'all' | 'urgent' | 'ai' | 'unread'>('all')
-  const [isTyping, setIsTyping] = useState(false)
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
-  
-  const deviceInfo = useDeviceDetection()
-
-  useEffect(() => {
-    loadChatData()
-    loadTeamMembers()
-    // Simulate typing indicator
-    const typingInterval = setInterval(() => {
-      if (Math.random() > 0.7 && !isTyping) {
-        setIsTyping(true)
-        setTimeout(() => setIsTyping(false), 3000)
-      }
-    }, 10000)
-    return () => clearInterval(typingInterval)
-  }, [])
 
   const loadChatData = async () => {
     try {
       const token = localStorage.getItem('accessToken')
       if (!token) {
-        // Use mock data if no token
-        const mockThreads: ChatThread[] = [
-          {
-            id: '1',
-            name: 'AI-Hiring-Pipeline',
-            type: 'ai_workflow',
-            description: 'AI-powered candidate screening and workflow automation',
-            priority: 'high',
-            ai_enabled: true,
-            last_activity: new Date().toISOString(),
-            unread_count: 3,
-            chat_messages: [
-              {
-                id: '1',
-                content: '🤖 AI detected 5 high-quality candidates for Senior Developer role. Auto-screening completed with 94% confidence.',
-                sender_name: 'RecruitFlow AI',
-                sender_role: 'ai',
-                created_at: new Date(Date.now() - 300000).toISOString(),
-                message_type: 'ai_insight'
-              },
-              {
-                id: '2',
-                content: 'Great! Can we review the top 3 candidates together?',
-                sender_name: 'Sarah Johnson',
-                sender_role: 'manager',
-                created_at: new Date(Date.now() - 240000).toISOString(),
-                message_type: 'text'
-              }
-            ]
-          },
-          {
-            id: '2',
-            name: 'urgent-positions',
-            type: 'urgent',
-            description: 'High-priority job openings requiring immediate attention',
-            priority: 'urgent',
-            ai_enabled: false,
-            last_activity: new Date(Date.now() - 1800000).toISOString(),
-            unread_count: 7,
-            chat_messages: [
-              {
-                id: '3',
-                content: '🚨 CEO position at TechCorp needs 3 candidates by Friday. Current pipeline: 0 candidates.',
-                sender_name: 'Mike Davis',
-                sender_role: 'recruiter',
-                created_at: new Date(Date.now() - 1800000).toISOString(),
-                message_type: 'text'
-              }
-            ]
-          },
-          {
-            id: '3',
-            name: 'team-pulse',
-            type: 'general',
-            description: 'Daily team updates and collaboration',
-            priority: 'medium',
-            ai_enabled: true,
-            last_activity: new Date(Date.now() - 3600000).toISOString(),
-            unread_count: 0,
-            chat_messages: [
-              {
-                id: '4',
-                content: '📊 Daily Pulse: 23 new applications, 5 interviews scheduled, 2 offers sent. Team velocity: +15% vs yesterday.',
-                sender_name: 'RecruitFlow AI',
-                sender_role: 'ai',
-                created_at: new Date(Date.now() - 3600000).toISOString(),
-                message_type: 'ai_insight'
-              }
-            ]
-          }
-        ]
-        setThreads(mockThreads)
-        setActiveThread(mockThreads[0])
+        console.error('No access token found')
         setLoading(false)
         return
       }
@@ -156,68 +50,101 @@ const WorkingDiscordStyle: React.FC = () => {
       if (response.ok) {
         const data = await response.json()
         console.log('✅ Chat data loaded:', data)
-        setThreads(data)
-        if (data.length > 0) {
-          setActiveThread(data[0])
+        
+        if (data.success && data.threads) {
+          setThreads(data.threads)
+          if (data.threads.length > 0) {
+            setActiveThread(data.threads[0])
+          }
         }
+      } else {
+        console.error('Failed to load chat data:', response.status)
+        // Fall back to mock data
+        loadMockData()
       }
     } catch (error) {
       console.error('❌ Error loading chat:', error)
-      // Fallback to mock data
-      setThreads([])
+      // Fall back to mock data
+      loadMockData()
     } finally {
       setLoading(false)
     }
   }
 
-  const loadTeamMembers = () => {
-    const mockMembers: TeamMember[] = [
+  const loadMockData = () => {
+    // Fallback mock data
+    const mockThreads: ChatThread[] = [
       {
         id: '1',
-        name: 'Test User',
-        role: 'Admin',
-        status: 'online',
-        current_activity: 'Reviewing candidates'
+        name: 'AI-Hiring-Pipeline',
+        type: 'ai_workflow',
+        description: 'AI-powered candidate screening and workflow automation',
+        priority: 'high',
+        ai_enabled: true,
+        last_activity: new Date().toISOString(),
+        unread_count: 3,
+        chat_messages: [
+          {
+            id: '1',
+            content: '🤖 AI detected 5 high-quality candidates for Senior Developer role. Auto-screening completed with 94% confidence.',
+            sender_name: 'RecruitFlow AI',
+            sender_role: 'ai',
+            created_at: new Date(Date.now() - 300000).toISOString(),
+            message_type: 'ai_insight'
+          },
+          {
+            id: '2',
+            content: 'Great! Can we review the top 3 candidates together?',
+            sender_name: 'Sarah Johnson',
+            sender_role: 'manager',
+            created_at: new Date(Date.now() - 240000).toISOString(),
+            message_type: 'text'
+          }
+        ]
       },
       {
         id: '2',
-        name: 'Sarah Johnson',
-        role: 'Senior Recruiter',
-        status: 'online',
-        current_activity: 'Interview with candidate'
-      },
-      {
-        id: '3',
-        name: 'Mike Davis',
-        role: 'Recruiter',
-        status: 'away',
-        current_activity: 'Client meeting'
-      },
-      {
-        id: '4',
-        name: 'Emma Wilson',
-        role: 'Coordinator',
-        status: 'busy',
-        current_activity: 'Processing applications'
-      },
-      {
-        id: '5',
-        name: 'RecruitFlow AI',
-        role: 'AI Assistant',
-        status: 'online',
-        current_activity: 'Analyzing resumes'
+        name: 'urgent-positions',
+        type: 'urgent',
+        description: 'High-priority job openings requiring immediate attention',
+        priority: 'urgent',
+        ai_enabled: false,
+        last_activity: new Date(Date.now() - 1800000).toISOString(),
+        unread_count: 7,
+        chat_messages: [
+          {
+            id: '3',
+            content: '🚨 CEO position at TechCorp needs 3 candidates by Friday. Current pipeline: 0 candidates.',
+            sender_name: 'Mike Davis',
+            sender_role: 'recruiter',
+            created_at: new Date(Date.now() - 1800000).toISOString(),
+            message_type: 'text'
+          }
+        ]
       }
     ]
-    setTeamMembers(mockMembers)
+    
+    setThreads(mockThreads)
+    setActiveThread(mockThreads[0])
+    setLoading(false)
   }
+
+  useEffect(() => {
+    loadChatData()
+  }, [])
 
   const sendMessage = async () => {
     if (!newMessage.trim() || !activeThread || sending) return
     
     setSending(true)
+    
     try {
       const token = localStorage.getItem('accessToken')
-      if (!token) return
+      if (!token) {
+        console.error('No access token found')
+        setSending(false)
+        return
+      }
 
       const response = await fetch(`http://localhost:3004/api/teams-collab/threads/${activeThread.id}/messages`, {
         method: 'POST',
@@ -232,33 +159,57 @@ const WorkingDiscordStyle: React.FC = () => {
       })
 
       if (response.ok) {
-        const messageData = await response.json()
-        console.log('✅ Message sent:', messageData)
+        const data = await response.json()
+        console.log('✅ Message sent:', data)
         
-        // Add the new message to the current thread
+        if (data.success && data.message) {
+          // Add the new message to the current thread
+          const newMessage = data.message
+          setThreads(prevThreads => 
+            prevThreads.map(thread => 
+              thread.id === activeThread.id 
+                ? { ...thread, chat_messages: [...thread.chat_messages, newMessage] }
+                : thread
+            )
+          )
+          
+          setActiveThread(prev => prev ? {
+            ...prev,
+            chat_messages: [...prev.chat_messages, newMessage]
+          } : null)
+          
+          setNewMessage('')
+        }
+      } else {
+        console.error('Failed to send message:', response.status)
+        // Fall back to local update
+        const localMessage = {
+          id: Date.now().toString(),
+          content: newMessage,
+          sender_name: 'You',
+          sender_role: 'admin',
+          created_at: new Date().toISOString(),
+          message_type: 'text' as const
+        }
+        
         setThreads(prevThreads => 
           prevThreads.map(thread => 
             thread.id === activeThread.id 
-              ? {
-                  ...thread,
-                  chat_messages: [...(thread.chat_messages || []), messageData.message]
-                }
+              ? { ...thread, chat_messages: [...thread.chat_messages, localMessage] }
               : thread
           )
         )
         
-        // Update active thread as well
         setActiveThread(prev => prev ? {
           ...prev,
-          chat_messages: [...(prev.chat_messages || []), messageData.message]
+          chat_messages: [...prev.chat_messages, localMessage]
         } : null)
         
         setNewMessage('')
-      } else {
-        console.error('❌ Failed to send message')
       }
     } catch (error) {
       console.error('❌ Error sending message:', error)
+      setNewMessage('')
     } finally {
       setSending(false)
     }
@@ -274,14 +225,9 @@ const WorkingDiscordStyle: React.FC = () => {
   if (loading) {
     return (
       <div className="h-screen bg-gray-800 flex items-center justify-center">
-        <div className="text-white text-xl">Loading Discord-style Chat...</div>
+        <div className="text-white text-xl">Loading Teams...</div>
       </div>
     )
-  }
-
-  // Use mobile view for mobile devices and small screens
-  if (deviceInfo.isMobile || deviceInfo.screenSize.width < 768) {
-    return <MobileTeamsView />
   }
 
   return (
@@ -326,27 +272,13 @@ const WorkingDiscordStyle: React.FC = () => {
               >
                 <Hash className="w-5 h-5 mr-1.5 text-gray-400" />
                 <span className="flex-1 truncate">{thread.name.toLowerCase()}</span>
-                {thread.chat_messages?.length > 0 && (
+                {thread.unread_count && thread.unread_count > 0 && (
                   <span className="bg-red-600 text-white text-xs rounded-full px-1.5 py-0.5 ml-auto">
-                    {thread.chat_messages.length}
+                    {thread.unread_count}
                   </span>
                 )}
               </div>
             ))}
-          </div>
-
-          {/* Voice Channels */}
-          <div className="px-2 py-2">
-            <div className="flex items-center px-2 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wide">
-              <span>Voice Channels</span>
-            </div>
-            <div className="w-full flex items-center px-2 py-1 mb-0.5 rounded text-left text-gray-300 hover:bg-gray-600 hover:text-gray-100 cursor-pointer">
-              <svg className="w-5 h-5 mr-1.5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.776L4.616 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.616l3.767-3.776z" clipRule="evenodd" />
-                <path d="M14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.414A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" />
-              </svg>
-              <span className="flex-1 truncate">General</span>
-            </div>
           </div>
         </div>
 
@@ -416,6 +348,7 @@ const WorkingDiscordStyle: React.FC = () => {
                           <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-medium text-sm ${
                             message.sender_role === 'admin' ? 'bg-red-600' :
                             message.sender_role === 'manager' ? 'bg-purple-600' :
+                            message.sender_role === 'ai' ? 'bg-green-600' :
                             'bg-blue-600'
                           }`}>
                             {message.sender_name.split(' ').map(n => n[0]).join('').slice(0, 2)}
@@ -439,6 +372,7 @@ const WorkingDiscordStyle: React.FC = () => {
                               <span className={`text-xs px-1.5 py-0.5 rounded text-white ${
                                 message.sender_role === 'admin' ? 'bg-red-600' :
                                 message.sender_role === 'manager' ? 'bg-purple-600' :
+                                message.sender_role === 'ai' ? 'bg-green-600' :
                                 'bg-blue-600'
                               }`}>
                                 {message.sender_role}
@@ -518,15 +452,15 @@ const WorkingDiscordStyle: React.FC = () => {
             Online — 4
           </h3>
           <div className="space-y-1">
-            {['Test User', 'Sarah Johnson', 'Mike Davis', 'Admin User'].map((name, index) => (
+            {['Test User', 'Sarah Johnson', 'Mike Davis', 'RecruitFlow AI'].map((name, index) => (
               <div key={index} className="flex items-center px-2 py-1 rounded hover:bg-gray-600 cursor-pointer group">
                 <div className="relative">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-medium ${
                     index === 0 ? 'bg-blue-600' : 
                     index === 1 ? 'bg-purple-600' : 
-                    index === 2 ? 'bg-green-600' : 'bg-red-600'
+                    index === 2 ? 'bg-green-600' : 'bg-green-600'
                   }`}>
-                    {name.split(' ').map(n => n[0]).join('')}
+                    {name === 'RecruitFlow AI' ? '🤖' : name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-gray-700"></div>
                 </div>
@@ -540,4 +474,4 @@ const WorkingDiscordStyle: React.FC = () => {
   )
 }
 
-export default WorkingDiscordStyle
+export default TeamsSimple

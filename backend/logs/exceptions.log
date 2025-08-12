@@ -570,3 +570,223 @@
 [31m    at writeOrBuffer (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:381:5)[39m
 [31m    at Console.Writable.write (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston-transport\node_modules\readable-stream\lib\_stream_writable.js:302:11)[39m
 [31m    at DerivedLogger.ondata (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\winston\node_modules\readable-stream\lib\_stream_readable.js:629:20)[39m
+2025-08-12 10:06:50:650 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 10:11:40:1140 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 10:12:19:1219 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 10:14:05:145 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m
+2025-08-12 10:52:21:5221 [31merror[39m: [31muncaughtException: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31mTSError: ⨯ Unable to compile TypeScript:[39m
+[31msrc/config/ai.ts(109,5): error TS2322: Type '(AIModelConfig | undefined)[]' is not assignable to type 'AIModelConfig[]'.[39m
+[31m  Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig'.[39m
+[31m    Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(111,25): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(111,45): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(117,35): error TS2322: Type 'AIModelConfig | undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig | null'.[39m
+[31msrc/config/ai.ts(142,12): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(142,33): error TS18048: 'config' is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(148,62): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+[31msrc/config/ai.ts(255,23): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(256,16): error TS2532: Object is possibly 'undefined'.[39m
+[31msrc/config/ai.ts(271,45): error TS2345: Argument of type 'AIModelConfig | undefined' is not assignable to parameter of type 'AIModelConfig'.[39m
+[31m  Type 'undefined' is not assignable to type 'AIModelConfig'.[39m
+
+[31m    at createTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:859:12)[39m
+[31m    at reportTSError (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:863:19)[39m
+[31m    at getOutput (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1077:36)[39m
+[31m    at Object.compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1433:41)[39m
+[31m    at Module.m._compile (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1617:30)[39m
+[31m    at node:internal/modules/cjs/loader:1895:10[39m
+[31m    at Object.require.extensions.<computed> [as .ts] (C:\Users\Tomso\OneDrive\Documents\claude code RR\backend\node_modules\ts-node\src\index.ts:1621:12)[39m
+[31m    at Module.load (node:internal/modules/cjs/loader:1465:32)[39m
+[31m    at Function._load (node:internal/modules/cjs/loader:1282:12)[39m
+[31m    at TracingChannel.traceSync (node:diagnostics_channel:322:14)[39m

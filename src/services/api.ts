@@ -1,5 +1,5 @@
 // API service layer for RecruitFlow backend communication
-const API_BASE_URL = 'http://localhost:3003/api'
+const API_BASE_URL = 'http://localhost:3004/api'
 
 // Generic API request function
 async function apiRequest<T>(endpoint: string, options: RequestInit = {}): Promise<T> {

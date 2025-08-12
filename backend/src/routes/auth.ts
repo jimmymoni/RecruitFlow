@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express'
 import bcrypt from 'bcryptjs'
-import jwt from 'jsonwebtoken'
+import jwt, { TokenExpiredError } from 'jsonwebtoken'
 import { createClient } from '@supabase/supabase-js'
 import { body, validationResult } from 'express-validator'
 
@@ -158,6 +158,8 @@ router.post('/login', loginValidation, async (req: Request, res: Response) => {
 
     const { email, password } = req.body
 
+    console.log('🔍 DEBUG: Login attempt for email:', email)
+
     // Get user from database
     const supabaseAdmin = getSupabaseAdmin()
     const { data: user, error } = await supabaseAdmin
@@ -166,7 +168,14 @@ router.post('/login', loginValidation, async (req: Request, res: Response) => {
       .eq('email', email)
       .single()
 
+    console.log('🔍 DEBUG: Database query result:', { user: user ? 'found' : 'not found', error: error?.message })
+    
+    if (user) {
+      console.log('🔍 DEBUG: User found - email:', user.email, 'is_active:', user.is_active, 'has_password:', !!user.password)
+    }
+
     if (error || !user) {
+      console.log('🔍 DEBUG: Login failed - no user found or database error')
       return res.status(401).json({
         success: false,
         message: 'Invalid email or password'
@@ -182,13 +191,19 @@ router.post('/login', loginValidation, async (req: Request, res: Response) => {
     }
 
     // Verify password
+    console.log('🔍 DEBUG: Comparing passwords - input length:', password.length, 'stored hash length:', user.password?.length)
     const isValidPassword = await bcrypt.compare(password, user.password)
+    console.log('🔍 DEBUG: Password comparison result:', isValidPassword)
+    
     if (!isValidPassword) {
+      console.log('🔍 DEBUG: Login failed - password mismatch')
       return res.status(401).json({
         success: false,
         message: 'Invalid email or password'
       })
     }
+    
+    console.log('🔍 DEBUG: Login successful for user:', user.email)
 
     // Update last login time
     await supabaseAdmin
@@ -314,7 +329,23 @@ router.get('/me', async (req: Request, res: Response) => {
     }
 
     // Verify JWT token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any
+    let decoded: any
+    try {
+      decoded = jwt.verify(token, process.env.JWT_SECRET!) as any
+    } catch (error) {
+      if (error instanceof TokenExpiredError) {
+        return res.status(401).json({
+          success: false,
+          message: 'Token expired',
+          code: 'TOKEN_EXPIRED'
+        })
+      }
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid token',
+        code: 'INVALID_TOKEN'
+      })
+    }
     
     // Get user from database
     const supabaseAdmin = getSupabaseAdmin()

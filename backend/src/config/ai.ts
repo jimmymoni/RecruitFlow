@@ -3,7 +3,7 @@ import { logger } from '../utils/logger'
 
 // AI Model Configuration
 export interface AIModelConfig {
-  provider: 'qwen' | 'baichuan' | 'chatglm' | 'openai'
+  provider: 'qwen' | 'baichuan' | 'chatglm' | 'moonshot' | 'openai'
   model: string
   endpoint: string
   apiKey: string
@@ -49,6 +49,17 @@ export const AI_MODELS: Record<string, AIModelConfig> = {
     isEnabled: false,
     timeout: 30000
   },
+  moonshot: {
+    provider: 'moonshot',
+    model: 'moonshot-v1-8k',
+    endpoint: process.env.MOONSHOT_API_URL || 'https://api.moonshot.cn/v1/chat/completions',
+    apiKey: process.env.MOONSHOT_API_KEY || '',
+    maxTokens: 8000,
+    temperature: 0.3,
+    costPerToken: 0.000012, // $0.000012 per token - very competitive
+    isEnabled: false,
+    timeout: 30000
+  },
   openai: {
     provider: 'openai',
     model: 'gpt-4',
@@ -63,7 +74,7 @@ export const AI_MODELS: Record<string, AIModelConfig> = {
 }
 
 // Primary model priority (fallback chain)
-export const MODEL_PRIORITY: string[] = ['qwen', 'baichuan', 'chatglm', 'openai']
+export const MODEL_PRIORITY: string[] = ['qwen', 'moonshot', 'baichuan', 'chatglm', 'openai']
 
 // AI Service Class
 export class AIService {

@@ -34,7 +34,7 @@ const FirmAuth: React.FC<FirmAuthProps> = ({ onFirmLogin }) => {
     setError('')
 
     try {
-      const response = await fetch('http://localhost:3003/api/firm-auth/login', {
+      const response = await fetch('http://localhost:3004/api/firm-auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const FirmAuth: React.FC<FirmAuthProps> = ({ onFirmLogin }) => {
     setSuccessMessage('')
 
     try {
-      const response = await fetch('http://localhost:3001/api/firm-auth/register-firm', {
+      const response = await fetch('http://localhost:3004/api/firm-auth/register-firm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
