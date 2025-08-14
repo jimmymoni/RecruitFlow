@@ -48,8 +48,10 @@ import AIToolsTester from './components/AIToolsTester'
 import WorkflowAutomation from './components/WorkflowAutomation'
 import FileUpload from './components/FileUpload'
 import DocumentViewer from './components/DocumentViewer'
+import ResumeParserDebug from './components/ResumeParserDebug'
 import BackendStatus from './components/BackendStatus'
 import AuthHeader from './components/AuthHeader'
+import ResumeParserTest from './components/ResumeParserTest'
 import AuthSystem from './components/AuthSystem'
 import ProtectedRoute from './components/ProtectedRoute'
 import SearchOverlay from './components/SearchOverlay'
@@ -534,6 +536,9 @@ function App() {
           >
             <BackendStatus />
           </motion.div>
+          
+          {/* Debug Panel - Always Available */}
+          <ResumeParserDebug />
         </div>
 
         {/* Sidebar */}
@@ -1233,6 +1238,7 @@ function App() {
           setShowWorkflowShortcuts(false)
         }}
       />
+
 
     </div>
   )

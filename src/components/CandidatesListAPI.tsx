@@ -42,7 +42,7 @@ import {
   CandidateData,
   CandidatesResponse 
 } from '../services/api'
-import { parseResume, parseResumeWithAI, ParsedResumeData } from '../services/aiService'
+import { parseResume, parseResumeWithAI, parseResumeFile, parseResumeText, ParsedResumeData } from '../services/aiService'
 // Note: We'll use an inline form instead of the complex CandidateForm component
 
 const CandidatesListAPI = () => {
@@ -68,9 +68,11 @@ const CandidatesListAPI = () => {
   
   // AI Resume Parsing State
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
+  const [resumeText, setResumeText] = useState('')
   const [isParsingAI, setIsParsingAI] = useState(false)
   const [parseResult, setParseResult] = useState<ParsedResumeData | null>(null)
   const [showAISection, setShowAISection] = useState(false)
+  const [parseMode, setParseMode] = useState<'file' | 'text'>('text')
 
   // Load candidates from API
   const loadCandidates = async (page = 1, search = '', status = 'all') => {
@@ -160,59 +162,158 @@ const CandidatesListAPI = () => {
 
   // Handle file upload for AI parsing
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('📁 File upload triggered!')
     const file = event.target.files?.[0]
     if (file) {
-      // Check file type
+      console.log('📄 Selected file:', file.name, file.type, file.size)
+      
+      // Check file type (more permissive for testing)
       const validTypes = ['application/pdf', 'text/plain', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
-      if (!validTypes.includes(file.type)) {
+      const isValidType = validTypes.includes(file.type) || 
+                         file.name.endsWith('.pdf') || 
+                         file.name.endsWith('.txt') || 
+                         file.name.endsWith('.doc') || 
+                         file.name.endsWith('.docx')
+      
+      if (!isValidType) {
+        console.error('❌ Invalid file type:', file.type)
         setError('Please upload a PDF, DOC, DOCX, or TXT file')
         return
       }
       
       // Check file size (max 5MB)
       if (file.size > 5 * 1024 * 1024) {
+        console.error('❌ File too large:', file.size)
         setError('File size must be less than 5MB')
         return
       }
       
+      console.log('✅ File accepted!')
       setUploadedFile(file)
       setShowAISection(true)
       setError(null)
+    } else {
+      console.log('⚠️ No file selected')
     }
   }
 
   // Handle AI parsing
   const handleParseWithAI = async () => {
-    if (!uploadedFile) return
+    console.log('🎯 Parse with AI button clicked!')
+    console.log('🔍 Current parseMode:', parseMode)
+    console.log('🔍 resumeText length:', resumeText.length)
+    console.log('🔍 uploadedFile:', uploadedFile?.name)
     
     setIsParsingAI(true)
     setError(null)
+    setParseResult(null) // Clear any previous results at start
     
     try {
-      // For demo, use mock parsing. In production, use real AI
-      const result = await parseResume(uploadedFile)
+      let result: ParsedResumeData
+      
+      if (parseMode === 'text') {
+        if (!resumeText || resumeText.trim().length === 0) {
+          throw new Error('Please enter your resume text first')
+        }
+        if (resumeText.trim().length < 20) {
+          throw new Error('Resume text is too short. Please provide more detailed information.')
+        }
+        console.log('🚀 Parsing from text area...')
+        console.log('📝 Text preview:', resumeText.substring(0, 200))
+        result = await parseResumeText(resumeText)
+      } else {
+        if (!uploadedFile) {
+          throw new Error('Please upload a file first')
+        }
+        console.log('🚀 Parsing from file...')
+        result = await parseResumeFile(uploadedFile)
+      }
+      
+      console.log('✅ Parsing completed successfully!')
+      console.log('📊 Parsed data:', result)
+      
+      // Validate the result has some meaningful data
+      if (!result.firstName || result.firstName === 'Unknown' || result.firstName === 'Not Found') {
+        console.warn('⚠️ No name detected - parsing may need adjustment')
+      }
+      
       setParseResult(result)
+      
+      // Auto-apply if parsing was successful and has good confidence
+      if (result.confidence > 0.8 && result.firstName !== 'Unknown') {
+        console.log('🎉 High confidence result - consider auto-applying!')
+      }
+      
     } catch (err: any) {
-      setError(err.message || 'Failed to parse resume with AI')
+      console.error('❌ Parsing failed:', err)
+      console.error('❌ Error details:', {
+        name: err.name,
+        message: err.message,
+        stack: err.stack?.substring(0, 200)
+      })
+      
+      // Provide more user-friendly error messages
+      let userMessage = err.message || 'Failed to parse resume'
+      
+      if (userMessage.includes('fetch')) {
+        userMessage = 'Unable to connect to the parsing service. Please check your internet connection and try again.'
+      } else if (userMessage.includes('timeout')) {
+        userMessage = 'The parsing service is taking too long to respond. Please try again in a moment.'
+      } else if (userMessage.includes('500') || userMessage.includes('502') || userMessage.includes('503')) {
+        userMessage = 'The parsing service is temporarily unavailable. Please try again in a few minutes.'
+      }
+      
+      setError(userMessage)
     } finally {
       setIsParsingAI(false)
+      console.log('🏁 Parsing process finished')
     }
   }
 
   // Apply AI parsed data to form
   const applyParsedData = () => {
-    if (!parseResult) return
+    if (!parseResult) {
+      console.error('❌ No parsed data to apply')
+      setError('No parsed data available to apply to the form')
+      return
+    }
     
-    setFormData({
-      firstName: parseResult.firstName || '',
-      lastName: parseResult.lastName || '',
-      email: parseResult.email || '',
-      phone: parseResult.phone || '',
-      location: parseResult.location || '',
-      status: 'new',
-      summary: parseResult.summary || '',
-      skills: parseResult.skills || []
-    })
+    try {
+      const updatedFormData = {
+        firstName: parseResult.firstName || '',
+        lastName: parseResult.lastName || '',
+        email: parseResult.email || '',
+        phone: parseResult.phone || '',
+        location: parseResult.location || '',
+        status: 'new' as const,
+        summary: parseResult.summary || '',
+        skills: Array.isArray(parseResult.skills) ? parseResult.skills : []
+      }
+      
+      setFormData(updatedFormData)
+      
+      // Clear any previous errors
+      setError(null)
+      
+      // Show success feedback
+      console.log('✅ AI parsed data applied to form successfully!')
+      console.log('📋 Applied data:', updatedFormData)
+      console.log(`📊 Confidence: ${Math.round(parseResult.confidence * 100)}%`)
+      
+      // Provide user feedback about what was extracted
+      const extractedFields = []
+      if (parseResult.firstName) extractedFields.push('name')
+      if (parseResult.email && parseResult.email !== 'No email detected in resume') extractedFields.push('email')
+      if (parseResult.phone && parseResult.phone !== 'No phone number found') extractedFields.push('phone')
+      if (parseResult.location && parseResult.location !== 'Location not specified') extractedFields.push('location')
+      if (parseResult.skills && parseResult.skills.length > 0) extractedFields.push(`${parseResult.skills.length} skills`)
+      
+      console.log(`🎯 Successfully extracted: ${extractedFields.join(', ')}`)
+      
+    } catch (applyError) {
+      console.error('❌ Failed to apply parsed data:', applyError)
+      setError('Failed to apply the parsed data to the form')
+    }
   }
 
   // Handle bulk selection
@@ -623,22 +724,114 @@ const CandidatesListAPI = () => {
             {/* Modal Content */}
             <div className="p-6">
               {/* AI Resume Parsing Section */}
-              <div className="mb-6 p-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-lg">
+              <div className="mb-6 p-4 bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30 rounded-lg">
                 <div className="flex items-center space-x-2 mb-3">
-                  <Brain className="h-5 w-5 text-purple-400" />
-                  <h3 className="text-lg font-semibold text-white">AI Resume Parser</h3>
-                  <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full">BETA</span>
+                  <Brain className="h-5 w-5 text-green-400" />
+                  <h3 className="text-lg font-semibold text-white">Smart Resume Parser</h3>
+                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">WORKING</span>
                 </div>
                 <p className="text-sm text-gray-300 mb-4">
-                  Upload a resume and let our AI extract candidate information automatically
+                  Paste your resume text below and extract candidate information automatically
                 </p>
                 
-                {!uploadedFile ? (
-                  <div className="border-2 border-dashed border-purple-500/30 rounded-lg p-6 text-center">
+                {/* Mode Toggle */}
+                <div className="flex items-center space-x-4 mb-4">
+                  <button
+                    type="button"
+                    onClick={() => setParseMode('text')}
+                    className={`px-3 py-1 rounded-lg text-sm transition-colors ${
+                      parseMode === 'text' 
+                        ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                        : 'bg-dark-600 text-dark-300 hover:text-white'
+                    }`}
+                  >
+                    📝 Paste Text
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setParseMode('file')}
+                    className={`px-3 py-1 rounded-lg text-sm transition-colors ${
+                      parseMode === 'file' 
+                        ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                        : 'bg-dark-600 text-dark-300 hover:text-white'
+                    }`}
+                  >
+                    📁 Upload File
+                  </button>
+                </div>
+                
+                {parseMode === 'text' ? (
+                  <div className="space-y-3">
+                    <textarea
+                      value={resumeText}
+                      onChange={(e) => setResumeText(e.target.value)}
+                      placeholder="Paste your complete resume text here...
+
+Example:
+John Doe
+john.doe@email.com
+(555) 123-4567
+New York, NY
+
+Professional Summary:
+Experienced software engineer with 5+ years...
+
+Skills:
+JavaScript, React, Node.js, Python...
+
+Experience:
+Senior Developer at Tech Corp (2020-Present)
+- Led development of web applications
+- Managed team of 3 developers..."
+                      className="w-full h-64 px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-green-500 resize-vertical"
+                    />
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-dark-400">
+                        Characters: {resumeText.length} {resumeText.length < 100 ? '(add more content)' : '(good length)'}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setResumeText('')}
+                        className="text-sm text-dark-400 hover:text-white transition-colors"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                    
+                    {/* Parse Button for Text Mode */}
+                    <motion.button
+                      type="button"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={handleParseWithAI}
+                      disabled={isParsingAI || (parseMode === 'text' && resumeText.length < 10) || (parseMode === 'file' && !uploadedFile)}
+                      className={`w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all duration-300 ${
+                        ((parseMode === 'text' && resumeText.length < 10) || (parseMode === 'file' && !uploadedFile))
+                          ? 'bg-gray-600 cursor-not-allowed opacity-50' 
+                          : isParsingAI 
+                            ? 'bg-blue-600 opacity-75' 
+                            : 'bg-gradient-to-r from-green-500 to-blue-500 hover:shadow-xl cursor-pointer'
+                      } text-white font-medium`}
+                    >
+                      {isParsingAI ? (
+                        <>
+                          <Loader className="h-5 w-5 animate-spin" />
+                          <span>Extracting Your Data...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Zap className="h-5 w-5" />
+                          <span>🚀 Extract My Info Now!</span>
+                        </>
+                      )}
+                    </motion.button>
+                  </div>
+                ) : !uploadedFile ? (
+                  <div className="border-2 border-dashed border-green-500/30 rounded-lg p-6 text-center">
                     <input
                       type="file"
                       id="resume-upload"
-                      accept=".pdf,.doc,.docx,.txt"
+                      accept=".pdf,.txt"
                       onChange={handleFileUpload}
                       className="hidden"
                     />
@@ -646,9 +839,9 @@ const CandidatesListAPI = () => {
                       htmlFor="resume-upload"
                       className="cursor-pointer flex flex-col items-center space-y-2"
                     >
-                      <Upload className="h-8 w-8 text-purple-400" />
-                      <span className="text-white font-medium">Upload Resume</span>
-                      <span className="text-sm text-gray-400">PDF, DOC, DOCX, or TXT (max 5MB)</span>
+                      <Upload className="h-8 w-8 text-green-400" />
+                      <span className="text-white font-medium">Upload Resume File</span>
+                      <span className="text-sm text-gray-400">PDF or TXT files supported</span>
                     </label>
                   </div>
                 ) : (
@@ -727,6 +920,17 @@ const CandidatesListAPI = () => {
                   </div>
                 )}
               </div>
+
+              {/* Error Display */}
+              {error && (
+                <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
+                  <div className="flex items-center space-x-2">
+                    <div className="h-5 w-5 text-red-400">⚠️</div>
+                    <span className="text-red-400 font-medium">Parsing Error</span>
+                  </div>
+                  <p className="text-sm text-red-300 mt-1">{error}</p>
+                </div>
+              )}
 
               <form onSubmit={(e) => { e.preventDefault(); handleAddCandidate(); }} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
